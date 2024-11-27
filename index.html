@@ -10,13 +10,14 @@
       line-height: 1.6;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
+      background-color: #ECECF0;
+      color: #333;
     }
     .container {
       max-width: 800px;
       margin: 20px auto;
       padding: 20px;
-      background: #fff;
+      background: #ECECF0;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
@@ -25,11 +26,11 @@
       text-align: center;
     }
     p {
-      color: #555;
+      color: #333;
       text-align: center;
     }
     .form-tool {
-      background: #f1f1f1;
+      background: #D1D1D6;
       padding: 20px;
       border-radius: 8px;
       margin: 20px 0;
@@ -46,25 +47,27 @@
       margin-bottom: 15px;
       border: 1px solid #ddd;
       border-radius: 4px;
+      background-color: #f9f9f9;
+      color: #333;
     }
     button {
       display: inline-block;
       padding: 10px 20px;
-      background-color: #007BFF;
+      background-color: #333;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
     button:hover {
-      background-color: #0056b3;
+      background-color: #5A5A5E;
     }
     .cta {
       text-align: center;
       margin-top: 30px;
     }
     .cta h3 {
-      color: #180E3C;
+      color: #333;
       margin-bottom: 10px;
     }
     .cta a {
@@ -82,7 +85,7 @@
     .result {
       margin-top: 20px;
       font-size: 16px;
-      color: #444;
+      color: #333;
     }
   </style>
 </head>
@@ -125,15 +128,23 @@
         return;
       }
 
+      const innovativeSuggestion = `
+        <h4>Ideas para hacer tu historia aún más atractiva:</h4>
+        <ul>
+          <li><strong>Contexto Innovador:</strong> Relaciona el dato con un evento reciente o una tendencia actual para que tu audiencia lo sienta más cercano y relevante.</li>
+          <li><strong>Historias Reales:</strong> Agrega un ejemplo de la vida real que ilustre cómo este dato ha afectado a personas o negocios de manera positiva.</li>
+          <li><strong>Pregunta Reflexiva:</strong> Incluye una pregunta que invite a tu audiencia a reflexionar sobre cómo el dato afecta su vida personal o profesional, incentivando la participación.</li>
+        </ul>`;
+
       document.getElementById('result').innerHTML = `
         <h3>Tu historia basada en datos:</h3>
         <p><strong>Dato:</strong> ${data}</p>
         <p><strong>Impacto:</strong> ${impact}</p>
-        <p><strong>Historia:</strong> "${data}. ${impact}. ${action}"</p>
+        <p><strong>Historia:</strong> "${data}. ${impact ? impact + '.' : ''} ${action}"</p>
         <p>¡Listo para compartir un mensaje poderoso y relevante!</p>
+        ${innovativeSuggestion}
       `;
     }
   </script>
 </body>
 </html>
-
